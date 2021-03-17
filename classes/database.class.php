@@ -2,14 +2,14 @@
 
 class Database {
     /****** Database settings local ******/
-    private $dsn = 'mysql:host=localhost;dbname=suni_portfolio';
-    private $user = 'suni_admin';
-    private $pwd = 'password';
+    // private $dsn = 'mysql:host=localhost;dbname=suni_portfolio';
+    // private $user = '******';
+    // private $pwd = '******';
 
     /****** Database settings deployed ******/
-    // private $dsn = 'mysql:host=localhost;dbname=susanneni_portfolio';
-    // private $user = 'susanneni_portfolioAdmin';
-    // private $pwd = 'TyfpAt-3detfe-tedli5';
+    private $dsn = 'mysql:host=localhost;dbname=susanneni_portfolio';
+    private $user = '******';
+    private $pwd = '******';
 
     /****** Database connection******/
     public function connect() {

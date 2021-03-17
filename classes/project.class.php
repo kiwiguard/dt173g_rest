@@ -11,8 +11,8 @@ class Project extends Database {
 
     // get all posts
     public function getAll() {
-        // $q = 'SELECT * FROM susanneni_portfolio.projects';
-        $q = 'SELECT * FROM suni_portfolio.projects';
+        $q = 'SELECT * FROM susanneni_portfolio.projects';
+        // $q = 'SELECT * FROM suni_portfolio.projects';
         
         $stmt = $this->connect()->prepare($q);
         $stmt->execute();
@@ -21,8 +21,8 @@ class Project extends Database {
 
     // get single post from db
     public function getOne($id) {
-        // $q = 'SELECT * FROM susanneni_portfolio.projects WHERE id =' . $id;
-        $q = 'SELECT * FROM suni_portfolio.projects WHERE id =' . $id;
+        $q = 'SELECT * FROM susanneni_portfolio.projects WHERE id =' . $id;
+        // $q = 'SELECT * FROM suni_portfolio.projects WHERE id =' . $id;
 
         $stmt = $this->connect()->prepare($q);
         $stmt->execute();
@@ -36,8 +36,8 @@ class Project extends Database {
     
     // add post to database
     public function addPost() {
-        // $q = 'INSERT INTO susanneni_portfolio.projects
-        $q = 'INSERT INTO suni_portfolio.projects
+        // $q = 'INSERT INTO suni_portfolio.projects
+        $q = 'INSERT INTO susanneni_portfolio.projects
             SET
                 pTitle = :pTitle,
                 pDescription = :pDescription,
@@ -68,8 +68,8 @@ class Project extends Database {
 
     // update post in database
     public function updatePost($id) {
-        // $q = 'UPDATE susanneni_portfolio.projects
-        $q = 'UPDATE suni_portfolio.projects
+        //$q = 'UPDATE suni_portfolio.projects
+        $q = 'UPDATE susanneni_portfolio.projects
         SET
             pTitle = :pTitle,
             pDescription = :pDescription,
@@ -103,8 +103,8 @@ class Project extends Database {
 
     // delete post from db
     public function deletePost($id) {
-        // $stmt = $this->connect()->prepare('DELETE FROM susanneni_portfolio.projects WHERE id= ' . $id);
-        $stmt = $this->connect()->prepare('DELETE FROM suni_portfolio.projects WHERE id= ' . $id);
+        $stmt = $this->connect()->prepare('DELETE FROM susanneni_portfolio.projects WHERE id= ' . $id);
+        // $stmt = $this->connect()->prepare('DELETE FROM suni_portfolio.projects WHERE id= ' . $id);
         if($stmt->execute()) {
             return true;
         } else {

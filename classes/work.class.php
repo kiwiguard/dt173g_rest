@@ -12,8 +12,8 @@ class Work extends Database {
 
     // get all posts
     public function getAll() {
-        // $q = 'SELECT * FROM susanneni_portfolio.work';
-        $q = 'SELECT * FROM suni_portfolio.work';
+        $q = 'SELECT * FROM susanneni_portfolio.work';
+        // $q = 'SELECT * FROM suni_portfolio.work';
         
         $stmt = $this->connect()->prepare($q);
         $stmt->execute();
@@ -22,8 +22,8 @@ class Work extends Database {
 
     // get single post from db
     public function getOne($id) {
-        // $q = 'SELECT * FROM susanneni_portfolio.work WHERE id =' . $id;
-        $q = 'SELECT * FROM suni_portfolio.work WHERE id =' . $id;
+        $q = 'SELECT * FROM susanneni_portfolio.work WHERE id =' . $id;
+        // $q = 'SELECT * FROM suni_portfolio.work WHERE id =' . $id;
 
         $stmt = $this->connect()->prepare($q);
         $stmt->execute();
@@ -37,8 +37,8 @@ class Work extends Database {
     
     // add post to database
     public function addPost() {
-        // $q = 'INSERT INTO susanneni_portfolio.work
-        $q = 'INSERT INTO suni_portfolio.work
+        // $q = 'INSERT INTO suni_portfolio.work
+        $q = 'INSERT INTO susanneni_portfolio.work
             SET
                 employer = :employer,
                 workTitle = :workTitle,
@@ -72,8 +72,8 @@ class Work extends Database {
 
     // update post in database
     public function updatePost($id) {
-        // $q = 'UPDATE susanneni_portfolio.work
-        $q = 'UPDATE suni_portfolio.work
+        //$q = 'UPDATE suni_portfolio.work
+        $q = 'UPDATE susanneni_portfolio.work
         SET
             employer = :employer,
             workTitle = :workTitle,
@@ -110,8 +110,8 @@ class Work extends Database {
 
     // delete post from db
     public function deletePost($id) {
-        // $stmt = $this->connect()->prepare('DELETE FROM susanneni_portfolio.work WHERE id= ' . $id);
-        $stmt = $this->connect()->prepare('DELETE FROM suni_portfolio.work WHERE id= ' . $id);
+        $stmt = $this->connect()->prepare('DELETE FROM susanneni_portfolio.work WHERE id= ' . $id);
+        // $stmt = $this->connect()->prepare('DELETE FROM suni_portfolio.work WHERE id= ' . $id);
         if($stmt->execute()) {
             return true;
         } else {
